@@ -1,6 +1,11 @@
 # 🚀 TuyaApp - Prueba Técnica Backend .NET 8
 
-Este proyecto es una solución para la prueba técnica de desarrollador backend en **.NET 8** con arquitectura **hexagonal (puertos y adaptadores)**, que gestiona clientes y órdenes, incluyendo:
+Este proyecto es una solución para la prueba técnica de desarrollador backend en **.NET 8** con arquitectura **hexagonal (puertos y adaptadores)**.
+Esta API permite administrar clientes y órdenes. Los usuarios pueden:
+- Registrar, consultar, actualizar y eliminar clientes.
+- Crear y cancelar órdenes asociadas a un cliente.
+
+Ademas incluye:
 
 - ✳️ Separación por capas: Domain, Application, Infrastructure, WebApi
 - ✅ Repositorios, servicios, controladores REST y DTOs
@@ -13,15 +18,15 @@ Este proyecto es una solución para la prueba técnica de desarrollador backend 
 ## 🧱 Estructura del proyecto
 TuyaApp/
 
-├── Domain/ ← Entidades y interfaces
+   ├── Domain/ ← Entidades y interfaces
 
-├── Application/ ← Servicios y DTOs
+   ├── Application/ ← Servicios y DTOs
 
-├── Infrastructure/ ← EF Core y repositorios
+   ├── Infrastructure/ ← EF Core y repositorios
 
-├── WebApi/ ← API REST con Swagger
+   ├── WebApi/ ← API REST con Swagger
 
-├── Tests/ ← xUnit + Moq + Integration tests
+   ├── Tests/ ← xUnit + Moq + Integration tests
 
 ---
 ## 📋 Requisitos para ejecutar
@@ -71,25 +76,19 @@ Cambia Server=localhost si tu instancia SQL Server tiene otro nombre.
 7. Se abrirá automáticamente Swagger UI en tu navegador:
 
 📘 Endpoints disponibles (Swagger)
-GET /api/customer → lista todos los clientes
+### 👤 Clientes
+- `GET    /api/customer` → lista todos los clientes
+- `GET    /api/customer/{id}` → cliente por ID
+- `GET    /api/customer/cc/{cc}` → cliente por cédula
+- `POST   /api/customer` → crear cliente
+- `PUT    /api/customer/{id}` → actualizar cliente
+- `DELETE /api/customer/{id}` → eliminar cliente
 
-POST /api/customer → crea un nuevo cliente
-
-GET /api/customer/{id}
-
-PUT /api/customer/{id}
-
-DELETE /api/customer/{id}
-
-GET /api/customer/cc/{cc}
-
-POST /api/order → crea orden para un cliente
-
-PUT /api/order/{id}/cancel → cancela orden
-
-GET /api/order → lista todas las órdenes con cliente
-
-GET /api/order/{id} → detalle de orden + cliente
+### 📦 Órdenes
+- `GET    /api/order` → lista todas las órdenes
+- `GET    /api/order/{id}` → detalle de orden con cliente
+- `POST   /api/order` → crear orden
+- `PUT    /api/order/{id}/cancel` → cancelar orden
 
 🧪 Pruebas
 ✅ Unitarias (TuyaApp.Tests)
@@ -105,7 +104,10 @@ Menú → Prueba > Ejecutar todas las pruebas
 
 O abre Explorador de pruebas → Ejecutar
 
-✍️ Autor
-Santiago Naranjo Sánchez
-GitHub
-Desarrollador Backend .NET
+---
+## ✍️ Autor
+
+**Santiago Naranjo Sánchez**  
+📧 naranjosanti2@gmail.com  
+🔗 [GitHub: @santiagoNS2](https://github.com/santiagoNS2)
+   Desarrollador  .NET

@@ -12,6 +12,7 @@ Este proyecto es una solución para la prueba técnica de desarrollador backend 
 
 ## 🧱 Estructura del proyecto
 TuyaApp/
+
 ├── Domain/ ← Entidades y interfaces
 
 ├── Application/ ← Servicios y DTOs

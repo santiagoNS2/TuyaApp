@@ -13,10 +13,15 @@ Este proyecto es una solución para la prueba técnica de desarrollador backend 
 ## 🧱 Estructura del proyecto
 TuyaApp/
 ├── Domain/ ← Entidades y interfaces
+
 ├── Application/ ← Servicios y DTOs
+
 ├── Infrastructure/ ← EF Core y repositorios
+
 ├── WebApi/ ← API REST con Swagger
+
 ├── Tests/ ← xUnit + Moq + Integration tests
+
 ---
 ## 📋 Requisitos para ejecutar
 
